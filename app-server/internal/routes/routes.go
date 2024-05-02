@@ -1,8 +1,8 @@
 package routes
 
 import (
-	"app-server/internal/handlers"
-	"app-server/internal/middleware"
+	"app-server/internal/auth"
+	"app-server/internal/health"
 	"os"
 
 	"github.com/gin-gonic/gin"
@@ -25,13 +25,13 @@ func ServerRouter() *gin.Engine {
 		c.Set("logger", sugar)
 		c.Next()
 	})
-	r.GET("/health_check", handlers.HealthCheckHandler)
+	r.GET("/health_check", health.HealthCheckHandler)
 	r.GET("/mock_token", func(c *gin.Context) {
-		handlers.MockTokenHandler(c, secret_byte)
+		auth.MockTokenHandler(c, secret_byte)
 	})
 
 	// Add JWT token middleware
-	auth_endpoints := r.Group("/api", middleware.AuthMiddleware(secret_byte))
-	auth_endpoints.GET("/token_check", handlers.TokenCheckHandler)
+	auth_endpoints := r.Group("/api", auth.AuthMiddleware(secret_byte))
+	auth_endpoints.GET("/token_check", auth.TokenCheckHandler)
 	return r
 }
