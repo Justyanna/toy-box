@@ -1,10 +1,10 @@
 package room
 
 import (
-	"example/qrka/src/ws"
 	"net/http"
 
 	"github.com/gin-gonic/gin"
+	"github.com/justyanna/toy-box/src/ws"
 )
 
 type RoomController struct {

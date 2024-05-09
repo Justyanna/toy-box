@@ -1,8 +1,8 @@
 package main
 
 import (
-	"example/qrka/src/room"
-	"example/qrka/src/ws"
+	"github.com/justyanna/toy-box/src/room"
+	"github.com/justyanna/toy-box/src/ws"
 
 	"github.com/gin-contrib/cors"
 	"github.com/gin-gonic/gin"

@@ -1,9 +1,8 @@
 package room
 
 import (
-	"example/qrka/src/ws"
-
 	"github.com/gorilla/websocket"
+	"github.com/justyanna/toy-box/src/ws"
 )
 
 type DefaultRoomService struct {

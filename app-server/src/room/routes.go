@@ -1,9 +1,8 @@
 package room
 
 import (
-	"example/qrka/src/ws"
-
 	"github.com/gin-gonic/gin"
+	"github.com/justyanna/toy-box/src/ws"
 )
 
 func RegisterRoutes(router *gin.Engine, clientManager *ws.ClientManager) {

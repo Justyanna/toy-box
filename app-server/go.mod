@@ -1,4 +1,4 @@
-module example/qrka
+module github.com/justyanna/toy-box
 
 go 1.21.6
 
