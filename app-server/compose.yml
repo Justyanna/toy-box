@@ -1,0 +1,13 @@
+name: toy-box-js-runtime-demo
+
+services:
+  demo:
+    container_name: toy-box-js-runtime-demo-server
+    image: toy-box-js-runtime-demo
+    build: .
+    ports:
+      - 5000:8080
+
+networks:
+  default:
+    driver: bridge
