@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Qrka</title>
+  <script src="main.js" type="module" defer></script>
+</head>
+
+<body>
+  <h1>Qrka</h1>
+  <section id="rooms-section">
+    <h2>Rooms</h2>
+    <ul id="room-list">
+      Rooms have not been loaded.
+    </ul>
+  </section>
+  <form id="room-create-form">
+    <h2>Create room</h2>
+    <div>
+      Name:
+      <input type="text" name="name" id="name" value="Player 1's room" />
+    </div>
+    <div>
+      Type:
+      <select name="type" id="type">
+        <option value="tic-tac-toe">Tic Tac Toe</option>
+        <option value="guess-the-number">Guess the number</option>
+      </select>
+    </div>
+    <div>
+      <button>Create</button>
+    </div>
+    <div>
+      <small id="room-create-form-status"></small>
+    </div>
+  </form>
+  <section>
+    <h2>Active room</h2>
+    <div>
+      <p><strong>ID:</strong> <span id="active-room-id">---</span></p>
+    </div>
+    <form id="send-message-form">
+      <div>
+        Type:
+        <select name="type" id="type">
+          <option value="test">Send test message</option>
+        </select>
+      </div>
+      <div>
+        Message:
+        <input type="text" name="payload" id="payload" />
+      </div>
+      <div>
+        <button>Send</button>
+      </div>
+    </form>
+    <div>
+      <h3>Messages</h3>
+      <ul id="message-list"></ul>
+    </div>
+  </section>
+</body>
+
+</html>
