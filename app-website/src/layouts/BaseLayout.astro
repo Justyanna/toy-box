@@ -1,0 +1,23 @@
+---
+import i18next, { t } from "i18next";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+const { page } = Astro.props;
+---
+
+<html lang={i18next.language}>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <meta name="description" content={t("site.title")} />
+    <title>{t("site.title")}</title>
+  </head>
+  <body>
+    <Header />
+    <h1>{t(`${page}.title`)}</h1>
+    <slot />
+    <Footer />
+  </body>
+</html>

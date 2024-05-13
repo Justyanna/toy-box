@@ -1,0 +1,11 @@
+---
+import BaseLayout from "./BaseLayout.astro";
+const { frontmatter } = Astro.props;
+const page = "game";
+---
+
+<BaseLayout page={page}>
+  <h3>{frontmatter.id} {frontmatter.title}</h3>
+  <p>{frontmatter.publishDate}</p>
+  <p><em>{frontmatter.description}</em></p>
+</BaseLayout>

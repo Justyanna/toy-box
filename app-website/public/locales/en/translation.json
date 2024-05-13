@@ -1,0 +1,15 @@
+{
+    "site": {
+        "title": "Toy box",
+        "description": "Welcome to the playground!"
+    },
+    "home": {
+        "title": "Home page"
+    },
+    "room": {
+        "title": "Room"
+    },
+    "game": {
+        "title": "Game"
+    }
+}
