@@ -2,36 +2,40 @@ package routes
 
 import (
 	"app-server/internal/auth"
-	"app-server/internal/health"
+	"app-server/internal/mock"
+	"app-server/internal/repository"
+	"database/sql"
 	"os"
 
 	"github.com/gin-gonic/gin"
 	"go.uber.org/zap"
 )
 
-func ServerRouter() *gin.Engine {
+func ServerRouter(database *sql.DB) *gin.Engine {
 	secret_key := os.Getenv("SECRET_KEY")
-	if secret_key == "" {
-		secret_key = "test"
-	}
 	secret_byte := []byte(secret_key)
 
 	sugar := zap.NewExample().Sugar()
 	defer sugar.Sync()
 
+	base_handler := repository.NewBaseHandler(database)
+	mock_handler := mock.NewBaseMockHandler(base_handler)
+
 	r := gin.Default()
-	// Add Zap-suggar logger to via middleware
+	// Add Zap-suggar logger
 	r.Use(func(c *gin.Context) {
 		c.Set("logger", sugar)
 		c.Next()
 	})
-	r.GET("/health_check", health.HealthCheckHandler)
+
+	// Mock endpoints
+	r.GET("/health_check", mock_handler.HealthCheckHandler)
 	r.GET("/mock_token", func(c *gin.Context) {
-		auth.MockTokenHandler(c, secret_byte)
+		mock_handler.MockTokenHandler(c, secret_byte)
 	})
 
-	// Add JWT token middleware
+	// Endpoints with JWT middleware
 	auth_endpoints := r.Group("/api", auth.AuthMiddleware(secret_byte))
-	auth_endpoints.GET("/token_check", auth.TokenCheckHandler)
+	auth_endpoints.GET("/token_check", mock_handler.TokenCheckHandler)
 	return r
 }

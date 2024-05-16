@@ -1,4 +1,4 @@
-package auth
+package mock
 
 import (
 	"net/http"
@@ -6,7 +6,7 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
-func TokenCheckHandler(c *gin.Context) {
+func (h *BaseMockHandler) TokenCheckHandler(c *gin.Context) {
 	c.JSON(http.StatusOK, gin.H{
 		"status": "OK",
 	})
