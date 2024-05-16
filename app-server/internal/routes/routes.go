@@ -3,7 +3,6 @@ package routes
 import (
 	"app-server/internal/auth"
 	"app-server/internal/mock"
-	"app-server/internal/repository"
 	"database/sql"
 	"os"
 
@@ -18,8 +17,7 @@ func ServerRouter(database *sql.DB) *gin.Engine {
 	sugar := zap.NewExample().Sugar()
 	defer sugar.Sync()
 
-	base_handler := repository.NewBaseHandler(database)
-	mock_handler := mock.NewBaseMockHandler(base_handler)
+	mock_handler := mock.NewBaseMockHandler(database)
 
 	r := gin.Default()
 	// Add Zap-suggar logger

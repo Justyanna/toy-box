@@ -1,11 +1,13 @@
 package mock
 
-import "app-server/internal/repository"
+import (
+	"database/sql"
+)
 
 type BaseMockHandler struct {
-	repository.BaseHandler
+	db *sql.DB
 }
 
-func NewBaseMockHandler(basehandler *repository.BaseHandler) *BaseMockHandler {
-	return &BaseMockHandler{BaseHandler: *basehandler}
+func NewBaseMockHandler(db *sql.DB) *BaseMockHandler {
+	return &BaseMockHandler{db: db}
 }
