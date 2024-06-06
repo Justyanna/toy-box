@@ -1,15 +1,15 @@
 {
-    "site": {
-        "title": "Toy box",
-        "description": "Witaj na placu zabaw!"
+    "MAIN": {
+        "TITLE.TOY_BOX": "Toy box",
+        "DESCRIPTION.WELCOME_TO_THE_PLAYGROUND": "Witaj na placu zabaw!"
     },
-    "home": {
-        "title": "Strona domowa"
+    "HOME": {
+        "TITLE.HOME": "Strona domowa"
     },
-    "room": {
-        "title": "Pokój"
+    "ROOM": {
+        "TITLE.ROOM": "Pokój"
     },
-    "game": {
-        "title": "Gra"
+    "GAME": {
+        "TITLE.GAME": "Gra"
     }
 }

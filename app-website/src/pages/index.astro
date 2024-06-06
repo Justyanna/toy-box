@@ -10,11 +10,13 @@ const rooms = $rooms.get();
 ---
 
 <BaseLayout page={page}>
-  <ul>
-    {
-      rooms.map((room) => (
-        <Room url={`/rooms/${room.slug}`} title={room.data.title} />
-      ))
-    }
-  </ul>
+  <div class="p-4">
+    <ul>
+      {
+        rooms.map((room) => (
+          <Room id={room.slug} title={room.data.title} />
+        ))
+      }
+    </ul>
+  </div>
 </BaseLayout>

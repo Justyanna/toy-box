@@ -1,15 +1,19 @@
 ---
 import { t } from "i18next";
 import BaseLayout from "./BaseLayout.astro";
-import GameLayout from "./GameLayout.astro";
-const { frontmatter } = Astro.props;
-const page = 'room'
+const { data } = Astro.props;
 ---
 
-<BaseLayout page={page}>
-  <h3>{frontmatter.id} {frontmatter.title}</h3>
-  <p>{frontmatter.date}</p>
-  <p><em>{frontmatter.description}</em></p>
-  <p>{t("game")}: <a href={`/games/${frontmatter.game.slug}`}>{frontmatter.game.slug}</a></p>
-  <slot />
+<BaseLayout>
+  <div class="p-4">
+    <h3>{data.id} {data.title}</h3>
+    <p>{data.date}</p>
+    <p><em>{data.description}</em></p>
+    <p>
+      {t("GAME.TITLE.GAME")}: <a href={`/games/${data.game.slug}`}
+        >{data.game.slug}</a
+      >
+    </p>
+    <slot />
+  </div>
 </BaseLayout>

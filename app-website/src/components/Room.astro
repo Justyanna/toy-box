@@ -1,4 +1,5 @@
 ---
-const { title, url } = Astro.props
+const { title, id } = Astro.props;
 ---
-<li><a href={url}>{title}</a></li>
+
+<li><a href={`/rooms/${id}`}>{title}</a></li>

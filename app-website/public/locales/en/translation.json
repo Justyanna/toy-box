@@ -1,15 +1,15 @@
 {
-    "site": {
-        "title": "Toy box",
-        "description": "Welcome to the playground!"
+    "MAIN": {
+        "TITLE.TOY_BOX": "Toy box",
+        "DESCRIPTION.WELCOME_TO_THE_PLAYGROUND": "Welcome to the playground!"
     },
-    "home": {
-        "title": "Home page"
+    "HOME": {
+        "TITLE.HOME": "Home page"
     },
-    "room": {
-        "title": "Room"
+    "ROOM": {
+        "TITLE.ROOM": "Room"
     },
-    "game": {
-        "title": "Game"
+    "GAME": {
+        "TITLE.GAME": "Game"
     }
 }

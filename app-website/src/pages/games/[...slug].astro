@@ -1,18 +1,16 @@
 ---
-import { getCollection } from 'astro:content';
-import GameLayout from '../../layouts/GameLayout.astro';
+import GameLayout from "../../layouts/GameLayout.astro";
+import { fetchGamesEntries } from "../../services/gameService";
+
 
 export async function getStaticPaths() {
-  const gamesEntries = await getCollection('games');
-  return gamesEntries.map(entry => ({
-    params: { slug: entry.slug }, props: { entry },
-  }));
+  return await fetchGamesEntries();
 }
 
 const { entry } = Astro.props;
 const { Content } = await entry.render();
 ---
 
-<GameLayout frontmatter={entry.data}>
-    <Content />
+<GameLayout data={entry.data}>
+  <Content />
 </GameLayout>
