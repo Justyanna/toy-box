@@ -1,0 +1,21 @@
+---
+import i18next, { t } from "i18next";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+---
+
+<html lang={i18next.language}>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <meta name="description" content={t("MAIN.DESCRIPTION.WELCOME_TO_THE_PLAYGROUND")} />
+    <title>{t("MAIN.TITLE.TOY_BOX")}</title>
+  </head>
+  <body>
+    <Header />
+    <slot />
+    <Footer />
+  </body>
+</html>

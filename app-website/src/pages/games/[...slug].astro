@@ -1,0 +1,16 @@
+---
+import GameLayout from "../../layouts/GameLayout.astro";
+import { fetchGamesEntries } from "../../services/gameService";
+
+
+export async function getStaticPaths() {
+  return await fetchGamesEntries();
+}
+
+const { entry } = Astro.props;
+const { Content } = await entry.render();
+---
+
+<GameLayout data={entry.data}>
+  <Content />
+</GameLayout>

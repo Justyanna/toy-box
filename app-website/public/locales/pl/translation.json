@@ -1,0 +1,15 @@
+{
+    "MAIN": {
+        "TITLE.TOY_BOX": "Toy box",
+        "DESCRIPTION.WELCOME_TO_THE_PLAYGROUND": "Witaj na placu zabaw!"
+    },
+    "HOME": {
+        "TITLE.HOME": "Strona domowa"
+    },
+    "ROOM": {
+        "TITLE.ROOM": "Pokój"
+    },
+    "GAME": {
+        "TITLE.GAME": "Gra"
+    }
+}

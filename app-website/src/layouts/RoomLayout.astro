@@ -1,0 +1,19 @@
+---
+import { t } from "i18next";
+import BaseLayout from "./BaseLayout.astro";
+const { data } = Astro.props;
+---
+
+<BaseLayout>
+  <div class="p-4">
+    <h3>{data.id} {data.title}</h3>
+    <p>{data.date}</p>
+    <p><em>{data.description}</em></p>
+    <p>
+      {t("GAME.TITLE.GAME")}: <a href={`/games/${data.game.slug}`}
+        >{data.game.slug}</a
+      >
+    </p>
+    <slot />
+  </div>
+</BaseLayout>

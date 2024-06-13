@@ -1,0 +1,22 @@
+---
+import { getCollection } from "astro:content";
+import Room from "../components/Room.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { atom } from "nanostores";
+
+const page = "home";
+const $rooms = atom(await getCollection("rooms"));
+const rooms = $rooms.get();
+---
+
+<BaseLayout page={page}>
+  <div class="p-4">
+    <ul>
+      {
+        rooms.map((room) => (
+          <Room id={room.slug} title={room.data.title} />
+        ))
+      }
+    </ul>
+  </div>
+</BaseLayout>

@@ -1,0 +1,17 @@
+---
+import RoomLayout from "../../layouts/RoomLayout.astro";
+import { fetchRoomEntries } from "../../services/roomService";
+
+
+export async function getStaticPaths() {
+  const paths = await fetchRoomEntries();
+  return paths;
+}
+
+const { entry } = Astro.props;
+const { Content } = await entry.render();
+---
+
+<RoomLayout data={entry.data}>
+  <Content />
+</RoomLayout>

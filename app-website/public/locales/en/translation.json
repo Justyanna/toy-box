@@ -1,0 +1,15 @@
+{
+    "MAIN": {
+        "TITLE.TOY_BOX": "Toy box",
+        "DESCRIPTION.WELCOME_TO_THE_PLAYGROUND": "Welcome to the playground!"
+    },
+    "HOME": {
+        "TITLE.HOME": "Home page"
+    },
+    "ROOM": {
+        "TITLE.ROOM": "Room"
+    },
+    "GAME": {
+        "TITLE.GAME": "Game"
+    }
+}
