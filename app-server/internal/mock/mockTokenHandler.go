@@ -9,7 +9,7 @@ import (
 	"go.uber.org/zap"
 )
 
-func (h *BaseMockHandler) MockTokenHandler(c *gin.Context, secret_byte []byte) {
+func MockTokenHandler(c *gin.Context, secret_byte []byte) {
 	logger := c.MustGet("logger").(*zap.SugaredLogger)
 
 	expirationTime := time.Now().Add(12 * time.Hour)
