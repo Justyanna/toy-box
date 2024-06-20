@@ -10,6 +10,6 @@ COPY . .
 
 RUN CGO_ENABLED=0 GOOS=linux go build -o /docker-rest-api ./cmd/main
 
-EXPOSE 8080 5432
+EXPOSE 8080
 
 CMD ["/docker-rest-api"]
