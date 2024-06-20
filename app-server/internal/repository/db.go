@@ -4,7 +4,8 @@ import (
 	"database/sql"
 	"fmt"
 	"log"
-	"os"
+
+	"app-server/internal/utilis"
 
 	"github.com/golang-migrate/migrate/v4"
 	"github.com/golang-migrate/migrate/v4/database/postgres"
@@ -18,10 +19,10 @@ type Database struct {
 
 func InitDB() *Database {
 
-	db_user := os.Getenv("POSTGRES_USER")
-	db_password := os.Getenv("POSTGRES_PASSWORD")
-	db_name := os.Getenv("POSTGRES_DB")
-	db_port := os.Getenv("POSTGRES_PORT")
+	db_user := utilis.GetDatabaseUser()
+	db_password := utilis.GetDatabasePassword()
+	db_name := utilis.GetDatabaseName()
+	db_port := utilis.GetDatabasePort()
 	connStr := fmt.Sprintf("postgres://%s:%s@db:%s/%s?sslmode=disable", db_user, db_password, db_port, db_name)
 
 	db, err := sql.Open("postgres", connStr)
