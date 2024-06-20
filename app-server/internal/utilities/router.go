@@ -1,4 +1,4 @@
-package utilis
+package utilities
 
 import (
 	"app-server/internal/auth"
